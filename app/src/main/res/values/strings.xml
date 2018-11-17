@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Name_Machine</string>
+    <string name="app_name">Vending Machine</string>
     <string name="edit_message">Enter an amount of money</string>
-    <string name="button_send">Send</string>
+    <string name="button_send">Enter</string>
 </resources>

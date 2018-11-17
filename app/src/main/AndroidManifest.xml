@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Name Machine"
+        android:label="Vending Machine"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       <activity android:name=".DisplayMessageActivity"
+       <activity android:name=".VendingMachinePickerActivity"
                  android:parentActivityName=".MainActivity">
            <!--Remember, you need it for API levels 15 and below -->
            <meta-data
