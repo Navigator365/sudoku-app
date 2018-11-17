@@ -2,4 +2,10 @@
     <string name="app_name">Vending Machine</string>
     <string name="edit_message">Enter an amount of money</string>
     <string name="button_send">Enter</string>
+    <string name="vending_machine_option1">Potato Chips: $1.99</string>
+    <string name="vending_machine_option2">Boco-Bola: $0.50</string>
+    <string name="vending_machine_option3">Waxy Fruit Snacks: $3.50</string>
+    <string name="vending_machine_option4">Donut Holes: $5.47</string>
+    <string name="vending_machine_option5">Dorcheetos: $2.99</string>
+    <string name="vending_machine_option6">Chocolate Milk: $6.54</string>
 </resources>
