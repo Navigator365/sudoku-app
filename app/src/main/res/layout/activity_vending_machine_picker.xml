@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OutputActivity">
+    tools:context=".VendingMachinePickerActivity">
 
     <Button
         android:id="@+id/button3"
@@ -15,6 +15,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="168dp"
         android:layout_marginRight="168dp"
+        android:onClick="computePurchase"
         android:text="@string/vending_machine_option1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,6 +31,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:onClick="computePurchase"
         android:text="@string/vending_machine_option2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.826"
@@ -43,6 +45,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="160dp"
+        android:onClick="computePurchase"
         android:text="@string/vending_machine_option3"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintHorizontal_bias="0.0"
@@ -78,7 +81,22 @@
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_marginTop="152dp"
+        android:onClick="computePurchase"
         android:text="@string/vending_machine_option6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="182dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
