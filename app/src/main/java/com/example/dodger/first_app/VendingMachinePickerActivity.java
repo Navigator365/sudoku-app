@@ -8,7 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class VendingMachinePickerActivity extends AppCompatActivity {
-
+    public static final String whichButtonPressed = "com.example.vending_machine.buttonPressed";
+    double comparisonValue = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,27 +33,28 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
 
-        setClickListener(button3, 1.99);
-        setClickListener(button4, 0.50);
-        setClickListener(button5, 3.50);
-        setClickListener(button6, 5.47);
-        setClickListener(button7, 2.99);
-        setClickListener(button8, 6.54);
+        setClickListener(button3, 1.99, 3);
+        setClickListener(button4, 0.50, 4);
+        setClickListener(button5, 3.50, 5);
+        setClickListener(button6, 5.47, 6);
+        setClickListener(button7, 2.99, 7);
+        setClickListener(button8, 6.54, 8);
 
+        intent.putExtra(whichButtonPressed, comparisonValue);
         startActivity(intent);
     }
 
-    private void setClickListener(Button listenerObject, final double price) {
+    private void setClickListener(Button listenerObject, final double price, final double buttonNumberValue) {
         Intent intent = new Intent(this, OutputActivity.class);
         final String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         listenerObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*double comparisonValue = Double.parseDouble(message);
-                    comparisonValue -= price;
+                    /*comparisonValue -= price;
                     TextView textView = findViewById(R.id.textView);
                     textView.setText(String.valueOf(comparisonValue));
             }*/
+                    comparisonValue = buttonNumberValue;
             }
         });
     }
