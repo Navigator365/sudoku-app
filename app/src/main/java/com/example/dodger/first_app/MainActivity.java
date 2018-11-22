@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    int oldValue;
     public static final String EXTRA_MESSAGE = "com.example.Vending_Machine.MESSAGE";
 
     @Override

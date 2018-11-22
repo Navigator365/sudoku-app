@@ -24,9 +24,7 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
 
     public void computePurchase(View v) {
         Intent intent = new Intent(this, OutputActivity.class);
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-        double comparisonValue = Double.parseDouble(message);
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
@@ -34,20 +32,27 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
 
-        setClickListener(button3);
-        setClickListener(button4);
-        setClickListener(button5);
-        setClickListener(button6);
-        setClickListener(button7);
-        setClickListener(button8);
-        
+        setClickListener(button3, 1.99);
+        setClickListener(button4, 0.50);
+        setClickListener(button5, 3.50);
+        setClickListener(button6, 5.47);
+        setClickListener(button7, 2.99);
+        setClickListener(button8, 6.54);
+
+        startActivity(intent);
     }
 
-    private void setClickListener(Button listenerObject){
+    private void setClickListener(Button listenerObject, final double price) {
+        Intent intent = new Intent(this, OutputActivity.class);
+        final String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         listenerObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                /*double comparisonValue = Double.parseDouble(message);
+                    comparisonValue -= price;
+                    TextView textView = findViewById(R.id.textView);
+                    textView.setText(String.valueOf(comparisonValue));
+            }*/
             }
         });
     }
