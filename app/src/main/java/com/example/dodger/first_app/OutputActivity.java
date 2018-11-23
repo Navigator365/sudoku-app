@@ -11,7 +11,10 @@ public class OutputActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_output);
         Intent intent = getIntent();
+        String stringComparisonValue = intent.getStringExtra(VendingMachinePickerActivity.WHICH_BUTTON_PRESSED);
+        //String inputMoney = getIntent().getExtras().getString(MainActivity.EXTRA_MESSAGE);
+
         TextView textView = findViewById(R.id.textView3);
-        textView.setText(R.string.test_string);
+        textView.setText(stringComparisonValue);
     }
 }
