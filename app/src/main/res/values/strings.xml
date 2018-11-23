@@ -8,5 +8,7 @@
     <string name="vending_machine_option4">Donut Holes: $5.47</string>
     <string name="vending_machine_option5">Dorcheetos: $2.99</string>
     <string name="vending_machine_option6">Chocolate Milk: $6.54</string>
-    <string name="test_string">Hello There</string>
+    <string name="end_string">You now have: $</string>
+    <string name="no_money_string">I\'m sorry, but you can\'t afford that.</string>
+    <string name="placeholderString"></string>
 </resources>
