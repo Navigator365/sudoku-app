@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static com.example.dodger.first_app.MainActivity.EXTRA_MESSAGE;
+
 public class VendingMachinePickerActivity extends AppCompatActivity {
     public static final String WHICH_BUTTON_PRESSED = "com.example.vending_machine.buttonPressed";
     public static String stringComparisonValue;
@@ -16,7 +18,7 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vending_machine_picker);
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
@@ -32,6 +34,7 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         Button button8 = findViewById(R.id.button8);
 
         final Intent intent = new Intent(this, OutputActivity.class);
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,5 +84,7 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        intent.putExtra(EXTRA_MESSAGE, message);
+
     }
 }

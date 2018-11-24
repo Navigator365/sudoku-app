@@ -17,7 +17,7 @@ public class OutputActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textView3);
         double fillerValue = 0.0;
 
-        if(Double.valueOf(stringComparisonValue) == 3.0) {
+       /* if(Double.valueOf(stringComparisonValue) == 3.0) {
             if (Double.valueOf(inputMoney) - 1.99 < 0.0) {
                 textView.setText(R.string.no_money_string);
             } else {
@@ -60,6 +60,6 @@ public class OutputActivity extends AppCompatActivity {
                 fillerValue = Double.valueOf(inputMoney) - 6.54;
                 textView.setText(R.string.end_string + String.valueOf(fillerValue));
             }
-        } textView.setText(R.string.no_money_string);
+        } textView.setText(R.string.no_money_string);*/
     }
 }
