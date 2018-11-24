@@ -13,11 +13,14 @@ public class OutputActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String stringComparisonValue = intent.getStringExtra(VendingMachinePickerActivity.WHICH_BUTTON_PRESSED);
 
-        String inputMoney = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        Intent intent1 = getIntent();
+        String inputMoney = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);//this is returning null-was STORED_MESSAGE
+
         TextView textView = findViewById(R.id.textView3);
+
         double fillerValue = 0.0;
 
-       /* if(Double.valueOf(stringComparisonValue) == 3.0) {
+        /*if(Double.valueOf(stringComparisonValue) == 3.0) {
             if (Double.valueOf(inputMoney) - 1.99 < 0.0) {
                 textView.setText(R.string.no_money_string);
             } else {
@@ -59,7 +62,6 @@ public class OutputActivity extends AppCompatActivity {
             } else {
                 fillerValue = Double.valueOf(inputMoney) - 6.54;
                 textView.setText(R.string.end_string + String.valueOf(fillerValue));
-            }
-        } textView.setText(R.string.no_money_string);*/
-    }
+            }*/ textView.setText(inputMoney);
+        }
 }

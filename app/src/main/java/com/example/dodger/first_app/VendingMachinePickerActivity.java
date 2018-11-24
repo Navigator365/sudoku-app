@@ -11,6 +11,7 @@ import static com.example.dodger.first_app.MainActivity.EXTRA_MESSAGE;
 
 public class VendingMachinePickerActivity extends AppCompatActivity {
     public static final String WHICH_BUTTON_PRESSED = "com.example.vending_machine.buttonPressed";
+    public static final String STORED_MESSAGE = "com.example.Vending_Machine.MESSAGE";
     public static String stringComparisonValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,6 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
-    }
-
-    public void computePurchase(View v) {
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
@@ -33,58 +31,53 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
 
-        final Intent intent = new Intent(this, OutputActivity.class);
-        String message = intent.getStringExtra(EXTRA_MESSAGE);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringComparisonValue = String.valueOf(3);
-                intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-                startActivity(intent);
+               computePurchase(3.0);
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringComparisonValue = String.valueOf(4);
-                intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-                startActivity(intent);
+                computePurchase(4.0);
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringComparisonValue = String.valueOf(5);
-                intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-                startActivity(intent);
+               computePurchase(5.0);
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringComparisonValue = String.valueOf(6);
-                intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-                startActivity(intent);
+                computePurchase(6.0);
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringComparisonValue = String.valueOf(7);
-                intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-                startActivity(intent);
+              computePurchase(7.0);
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringComparisonValue = String.valueOf(8);
-                intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-                startActivity(intent);
+               computePurchase(8.0);
             }
         });
-        intent.putExtra(EXTRA_MESSAGE, message);
+    }
 
+    public void computePurchase(double buttonNumberValue) {
+        Intent intent = new Intent(this, OutputActivity.class);
+        Intent intent1 = new Intent(this, OutputActivity.class);
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+        stringComparisonValue = String.valueOf(buttonNumberValue);
+        intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
+        intent1.putExtra(STORED_MESSAGE, message);
+        startActivity(intent);
     }
 }
