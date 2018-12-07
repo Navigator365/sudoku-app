@@ -13,8 +13,7 @@ public class OutputActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String stringComparisonValue = intent.getStringExtra(VendingMachinePickerActivity.WHICH_BUTTON_PRESSED);
 
-        Intent intent1 = getIntent();
-        String inputMoney = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);//this is returning null-was STORED_MESSAGE
+        String inputMoney = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);//this is returning null-was STORED_MESSAGE
 
         TextView textView = findViewById(R.id.textView3);
 

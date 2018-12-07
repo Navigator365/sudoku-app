@@ -18,9 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendTheMessage(View v) {
         Intent intent = new Intent(this, VendingMachinePickerActivity.class);
+        Intent intent1 = new Intent(this, OutputActivity.class);
         EditText editText = findViewById(R.id.editText);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
+        intent1.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 

@@ -7,11 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import static com.example.dodger.first_app.MainActivity.EXTRA_MESSAGE;
-
 public class VendingMachinePickerActivity extends AppCompatActivity {
     public static final String WHICH_BUTTON_PRESSED = "com.example.vending_machine.buttonPressed";
-    public static final String STORED_MESSAGE = "com.example.Vending_Machine.MESSAGE";
+    public static final String CONTINUED_EXTRA_MESSAGE = "com.example.vending_machine.buttonPressed";
     public static String stringComparisonValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +17,22 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vending_machine_picker);
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(EXTRA_MESSAGE);
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
+       /* Intent intent1 = getIntent();
+        String message1 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        intent1.putExtra(MainActivity.EXTRA_MESSAGE, message1);*/
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
+
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
         Button button6 = findViewById(R.id.button6);
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
+
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,16 +71,15 @@ public class VendingMachinePickerActivity extends AppCompatActivity {
                computePurchase(8.0);
             }
         });
+
+        //startActivity(intent1);
     }
 
     public void computePurchase(double buttonNumberValue) {
         Intent intent = new Intent(this, OutputActivity.class);
-        Intent intent1 = new Intent(this, OutputActivity.class);
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         stringComparisonValue = String.valueOf(buttonNumberValue);
         intent.putExtra(WHICH_BUTTON_PRESSED, stringComparisonValue);
-        intent1.putExtra(STORED_MESSAGE, message);
         startActivity(intent);
     }
 }
